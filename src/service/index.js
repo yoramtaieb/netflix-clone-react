@@ -2,6 +2,7 @@ import axios from "axios";
 
 const apiKey = process.env.REACT_APP_API_KEY;
 const url = "https://api.themoviedb.org/3";
+const posterUrl = "https://image.tmdb.org/t/p/original/";
 const nowPlayingUrl = `${url}/movie/now_playing`;
 const popularUrl = `${url}/movie/popular`;
 const genreUrl = `${url}/genre/movie/list`;
@@ -17,7 +18,6 @@ export const fetchMoviesNowPlaying = async () => {
       },
     });
 
-    const posterUrl = "https://image.tmdb.org/t/p/original/";
     const modifiedData = data["results"].map((m) => ({
       id: m["id"],
       backPoster: posterUrl + m["backdrop_path"],
@@ -43,7 +43,6 @@ export const fetchMoviesPopular = async () => {
       },
     });
 
-    const posterUrl = "https://image.tmdb.org/t/p/original/";
     const modifiedData = data["results"].map((m) => ({
       id: m["id"],
       backPoster: posterUrl + m["backdrop_path"],

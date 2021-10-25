@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchMoviesNowPlaying } from "../../../service/index";
+import { Link } from "react-router-dom";
 
 function NowPlayingMovies() {
   const [nowPlaying, setNowPlaying] = useState([]);
@@ -19,7 +20,9 @@ function NowPlayingMovies() {
           ? nowPlaying.map((movie, index) => {
               return (
                 <div key={index}>
-                  <h3>{movie.title}</h3>
+                  <Link to={`/movie/${movie.id}`}>
+                    <h3>{movie.title}</h3>
+                  </Link>
                 </div>
               );
             })
