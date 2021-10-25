@@ -1,0 +1,8 @@
+@import "../../sass/mixins.scss";
+
+.layout {
+  @include media(laptop) {
+    width: 82vw;
+    display: flex;
+  }
+}

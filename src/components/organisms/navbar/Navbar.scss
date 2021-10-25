@@ -1,0 +1,148 @@
+@import "../../../sass/mixins.scss";
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid black;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  width: 100%;
+  @include media(laptop) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 18vw;
+    height: 100vh;
+    border-bottom: none;
+    border-right: 0.1px solid rgba(0, 0, 0, 0.5);
+    border-left: none;
+    border-top: none;
+  }
+  .logo {
+    color: black;
+    font-size: 1.6rem;
+    font-family: "Poppins-Bold";
+    span {
+      background-color: #a51a1a;
+      padding-left: 10px;
+      color: white;
+    }
+  }
+  .nav_burger {
+    width: 30px;
+    height: 24px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    z-index: 10000;
+    @include media(laptop) {
+      display: none;
+    }
+    span {
+      background: black;
+      display: block;
+      position: absolute;
+      height: 3.5px;
+      width: 100%;
+      border-radius: 8px;
+      opacity: 1;
+      left: 0;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: 0.25s ease-in-out;
+      -moz-transition: 0.25s ease-in-out;
+      -o-transition: 0.25s ease-in-out;
+      transition: 0.25s ease-in-out;
+      &:nth-child(1) {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 10px;
+      }
+      &:nth-child(3) {
+        top: 10px;
+      }
+      &:nth-child(4) {
+        top: 20px;
+      }
+    }
+  }
+  .nav_burger.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  .nav_burger.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .nav_burger.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .nav_burger.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  .overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+  }
+  .nav_links_desktop {
+    display: none;
+    @include media(laptop) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 80%;
+      width: 18vw;
+    }
+    .little_menu {
+      margin-bottom: 10px;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 0.8rem;
+      font-family: "Poppins-medium";
+      padding-left: 15px;
+    }
+    .link {
+      font-size: 1.1rem;
+      font-family: "Poppins-bold";
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      color: rgba(0, 0, 0, 0.699);
+    }
+    .active {
+      background: #a51a1a;
+      width: 100%;
+      color: white;
+    }
+  }
+}
