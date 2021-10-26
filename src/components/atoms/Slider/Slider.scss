@@ -1,0 +1,36 @@
+@import "../../../sass/mixins.scss";
+
+.slider {
+  margin: 50px 20px;
+  @include media(laptop) {
+    margin: 0 50px;
+  }
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+  .slick-dots {
+    display: none !important;
+  }
+  .movie {
+    .container_images {
+      height: 400px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      h3 {
+        font-size: 1.2em;
+        font-family: "Poppins-Extrabold";
+        color: white;
+        margin: 0 20px 20px 0;
+        text-align: right;
+        -webkit-text-stroke: 1.5px black;
+        @include media(laptop) {
+          font-size: 1.7em;
+        }
+      }
+    }
+  }
+}

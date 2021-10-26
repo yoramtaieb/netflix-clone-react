@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { fetchMoviesPopular } from "../../../service/index";
 
 function PopularMovies() {
@@ -19,7 +20,9 @@ function PopularMovies() {
           ? popular.map((movie, index) => {
               return (
                 <div key={index}>
-                  <h3>{movie.title}</h3>
+                  <Link to={`/popular-movies/movie/${movie.id}`}>
+                    <h3>{movie.title}</h3>
+                  </Link>
                 </div>
               );
             })

@@ -3,7 +3,7 @@ import { fetchMovieDetail } from "../../../service";
 
 export function MovieDetails({ match }) {
   let params = match.params;
-  const posterUrl = "https://image.tmdb.org/t/p/original/";
+  const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [detail, setDetail] = useState([]);
 
   useEffect(() => {
@@ -12,19 +12,20 @@ export function MovieDetails({ match }) {
     };
 
     fetchAPI();
-  }, [detail, params.id]);
+  }, [params.id]);
 
   return (
     <>
       <div>
         <img
-          src={posterUrl + detail.poster_path}
+          src={posterUrl + detail.backdrop_path}
           alt=""
-          style={{ height: "400px" }}
+          style={{ height: "150px" }}
         />
         <h3>{detail.id}</h3>
         <h3>{detail.title}</h3>
         <h3>{detail.release_date}</h3>
+        <h3>{detail.overview}</h3>
       </div>
     </>
   );

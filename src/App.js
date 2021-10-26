@@ -8,29 +8,38 @@ import {
 
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/home/Home";
-import NowPlayingMovies from "./components/moleculs/nowPlayingMovies/NowPlayingMovies";
 import PopularMovies from "./components/moleculs/popularMovies/PopularMovies";
 import MovieDetails from "./components/moleculs/movieDetails/MovieDetails";
+
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/darkmode/globalStyles";
+import { lightTheme, darkTheme } from "./components/darkmode/Theme";
+import { useDarkMode } from "./components/darkmode/useDarkMode";
 
 import "./App.scss";
 
 function App() {
+  const [theme] = useDarkMode();
+  const themeMode = theme === "light" ? lightTheme : darkTheme;
+
   return (
     <>
       <Router>
-        <Layout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route
-              exact
-              path="/now-playing-movies"
-              component={NowPlayingMovies}
-            />
-            <Route exact path="/popular-movies" component={PopularMovies} />
-            <Route exact path="/movie/:id" component={MovieDetails} />
-            <Redirect from="*" to="/" />
-          </Switch>
-        </Layout>
+        <ThemeProvider theme={themeMode}>
+          <GlobalStyles />
+          <Layout>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/popular-movies" component={PopularMovies} />
+              <Route
+                exact
+                path="/popular-movies/movie/:id"
+                component={MovieDetails}
+              />
+              <Redirect from="*" to="/" />
+            </Switch>
+          </Layout>
+        </ThemeProvider>
       </Router>
     </>
   );

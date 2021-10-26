@@ -1,0 +1,9 @@
+@import "../../../sass/mixins.scss";
+
+.home {
+  width: 100%;
+  @include media(laptop) {
+    width: 82vw;
+    height: 100vh;
+  }
+}
