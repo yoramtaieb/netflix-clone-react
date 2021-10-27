@@ -5,20 +5,21 @@
   display: flex;
   flex-direction: column;
   @include media(laptop) {
-    margin: 10px 50px;
+    margin: 30px 50px 0 50px;
     flex-wrap: wrap;
   }
   .title {
     font-family: "Poppins-extrabold";
     font-size: 1.1rem;
     @include media(laptop) {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
     }
   }
   .all_infos {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
+
     .infos {
       background-color: #a51a1a;
       padding: 5px 0px;
@@ -28,7 +29,7 @@
       cursor: pointer;
       margin-top: 20px;
       @include media(laptop) {
-        width: 150px;
+        width: 130px;
         margin-top: 20px;
         margin-right: 10px;
       }
@@ -37,7 +38,7 @@
         font-size: 0.7rem;
         color: #efefef;
         @include media(laptop) {
-          font-size: 1rem;
+          font-size: 0.8rem;
         }
       }
     }

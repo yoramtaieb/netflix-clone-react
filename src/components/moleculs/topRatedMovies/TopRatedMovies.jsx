@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchMoviesPopular } from "../../../service/index";
+import { fetchTopratedMovie } from "../../../service/index";
 
-function PopularMovies() {
-  const [popular, setPopular] = useState([]);
+function TopRatedMovies() {
+  const [topRated, setTopRated] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setPopular(await fetchMoviesPopular());
+      setTopRated(await fetchTopratedMovie());
     };
 
     fetchAPI();
@@ -16,8 +16,8 @@ function PopularMovies() {
   return (
     <>
       <div>
-        {popular
-          ? popular.map((movie, index) => {
+        {topRated
+          ? topRated.map((movie, index) => {
               return (
                 <div key={index}>
                   <Link to={`/movie/${movie.id}`}>
@@ -32,4 +32,4 @@ function PopularMovies() {
   );
 }
 
-export default PopularMovies;
+export default TopRatedMovies;

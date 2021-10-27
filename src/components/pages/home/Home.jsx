@@ -1,5 +1,5 @@
 import React from "react";
-import Sliders from "../../atoms/Slider/Slider";
+import Carousel from "../../atoms/Carousel/Carousel";
 import GenreMovies from "../../moleculs/genreMovies/GenreMovies";
 
 import "./Home.scss";
@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
       <div className="home">
-        <Sliders />
+        <Carousel />
         <GenreMovies />
       </div>
     </>

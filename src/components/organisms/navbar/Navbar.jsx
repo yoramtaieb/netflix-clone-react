@@ -52,10 +52,16 @@ function Navbar() {
             <p>Menu</p>
           </div>
           <NavLink exact to="/" className="link">
-            <h3>Home</h3>
+            <h3>• Home</h3>
+          </NavLink>
+          <NavLink exact to="/top-rated-movies" className="link">
+            <h3>• Top Rated Movies</h3>
           </NavLink>
           <NavLink exact to="/popular-movies" className="link">
-            <h3>Popular Movies</h3>
+            <h3>• Popular Movies</h3>
+          </NavLink>
+          <NavLink exact to="/upcoming-movies" className="link">
+            <h3>• Upcoming...</h3>
           </NavLink>
         </div>
         <div className="toggle">

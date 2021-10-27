@@ -17,6 +17,8 @@ import { lightTheme, darkTheme } from "./components/darkmode/Theme";
 import { useDarkMode } from "./components/darkmode/useDarkMode";
 
 import "./App.scss";
+import TopRatedMovies from "./components/moleculs/topRatedMovies/TopRatedMovies";
+import UpcomingMovies from "./components/moleculs/upcomingMovies/UpcomingMovies";
 
 function App() {
   const [theme] = useDarkMode();
@@ -33,9 +35,11 @@ function App() {
               <Route exact path="/popular-movies" component={PopularMovies} />
               <Route
                 exact
-                path="/popular-movies/movie/:id"
-                component={MovieDetails}
+                path="/top-rated-movies"
+                component={TopRatedMovies}
               />
+              <Route exact path="/upcoming-movies" component={UpcomingMovies} />
+              <Route exact path="/movie/:id" component={MovieDetails} />
               <Redirect from="*" to="/" />
             </Switch>
           </Layout>

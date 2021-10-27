@@ -3,9 +3,9 @@ import { fetchMoviesPopular } from "../../../service";
 import Slider from "react-slick";
 import settings from "./settings";
 
-import "./Slider.scss";
+import "./Carousel.scss";
 
-function Sliders() {
+function Carousel() {
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
@@ -44,4 +44,4 @@ function Sliders() {
   );
 }
 
-export default Sliders;
+export default Carousel;
