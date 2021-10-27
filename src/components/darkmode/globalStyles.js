@@ -34,4 +34,12 @@ export const GlobalStyles = createGlobalStyle`
             }
         }
     }
+    .categories_movies {
+      .all_infos {
+        .container_title {
+          background: ${({ theme }) => theme.text};
+          color: ${({ theme }) => theme.body};
+        }
+      }
+    }
 `;

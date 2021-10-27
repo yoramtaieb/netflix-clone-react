@@ -111,6 +111,28 @@ nav {
     flex-direction: column;
     align-items: center;
     background: white;
+    .links {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      @include media(miniphone) {
+        top: 15%;
+      }
+      a {
+        padding: 20px 40px;
+        font-size: 1.2em;
+
+        display: block;
+        font-family: "Poppins-bold";
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
   }
   .nav_links_desktop {
     display: none;

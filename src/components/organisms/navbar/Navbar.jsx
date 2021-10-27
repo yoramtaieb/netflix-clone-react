@@ -45,7 +45,42 @@ function Navbar() {
           <span></span>
         </div>
         <div id="myNav" className="overlay" style={{ height: heightNav }}>
-          <div className="links"></div>
+          <div className="links">
+            <NavLink
+              exact
+              to="/"
+              onClick={() => {
+                setOpen(true);
+                toggleNav();
+              }}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              exact
+              to="/movies"
+              onClick={() => {
+                setOpen(true);
+                toggleNav();
+              }}
+            >
+              Movies
+            </NavLink>
+            <NavLink
+              exact
+              to="/upcoming-movies"
+              onClick={() => {
+                setOpen(true);
+                toggleNav();
+              }}
+            >
+              Upcoming Movies
+            </NavLink>
+            <ThemeProvider theme={themeMode}>
+              <GlobalStyles />
+              <Toggle theme={theme} toggleTheme={themeToggler} />
+            </ThemeProvider>
+          </div>
         </div>
         <div className="nav_links_desktop">
           <div className="little_menu">
@@ -54,11 +89,8 @@ function Navbar() {
           <NavLink exact to="/" className="link">
             <h3>• Home</h3>
           </NavLink>
-          <NavLink exact to="/top-rated-movies" className="link">
-            <h3>• Top Rated Movies</h3>
-          </NavLink>
-          <NavLink exact to="/popular-movies" className="link">
-            <h3>• Popular Movies</h3>
+          <NavLink exact to="/movies" className="link">
+            <h3>• Movies</h3>
           </NavLink>
           <NavLink exact to="/upcoming-movies" className="link">
             <h3>• Upcoming...</h3>
