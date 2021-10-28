@@ -1,5 +1,5 @@
 import React from "react";
-import Carousel from "../../atoms/Carousel/Carousel";
+import Carousel from "../../atoms/carousel/Carousel";
 import GenreMovies from "../../moleculs/genreMovies/GenreMovies";
 
 import "./Home.scss";

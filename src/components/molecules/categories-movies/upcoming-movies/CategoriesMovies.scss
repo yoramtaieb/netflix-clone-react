@@ -17,9 +17,12 @@
   }
   .all_infos {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
+    @include media(laptop) {
+      justify-content: flex-start;
+    }
     .container_img {
       width: 250px;
       height: 250px;
@@ -33,6 +36,7 @@
     .container_title {
       width: 250px;
       margin-bottom: 20px;
+      margin-right: 20px;
       padding: 10px;
       background: black;
       color: white;
