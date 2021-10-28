@@ -20,9 +20,6 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
-    @include media(laptop) {
-      justify-content: flex-start;
-    }
     .container_img {
       width: 250px;
       height: 250px;
@@ -43,7 +40,17 @@
       border-radius: 0 0 10px 10px;
       .movie_title {
         font-size: 1em;
-        font-family: "Poppins-bold";
+        font-family: "Poppins-extrabold";
+      }
+      .movie_rated {
+        font-size: 0.9em;
+        font-family: "Poppins-extrabold";
+        span {
+          font-family: "Poppins-semibold";
+        }
+        .note {
+          font-family: "Poppins-extrabold";
+        }
       }
     }
   }

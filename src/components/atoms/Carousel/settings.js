@@ -3,7 +3,7 @@ const settings = {
   infinite: true,
   slidesToScroll: 1,
   autoplay: true,
-  speed: 3000,
+  speed: 4000,
   autoplaySpeed: 6000,
   cssEase: "linear",
 };

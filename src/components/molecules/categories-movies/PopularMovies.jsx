@@ -33,6 +33,11 @@ const PopularMovies = () => {
                       ></div>
                       <div className="container_title">
                         <h3 className="movie_title">{movie.title}</h3>
+                        <h3 className="movie_rated">
+                          <span>Rated : </span>
+                          {movie.rating}
+                          <span className="note">/10</span>
+                        </h3>
                       </div>
                     </Link>
                   </div>

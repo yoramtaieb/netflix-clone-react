@@ -7,7 +7,7 @@ import "./TabsMovie.scss";
 
 const Tab = styled.button`
   cursor: pointer;
-  background: white;
+  background: #efefef;
   font-family: "Poppins-extrabold";
   font-size: 0.8rem;
   border: 1px solid black;
@@ -24,7 +24,7 @@ const Tab = styled.button`
 const TabsMovie = () => {
   const categorieTitles = ["Popular Movies", "Top Rated Movies"];
   const [active, setActive] = useState(categorieTitles);
-  const categories = [<PopularMovies />, <TopRatedMovies />];
+  const categories = [<TopRatedMovies />, <PopularMovies />];
 
   return (
     <>
@@ -39,7 +39,7 @@ const TabsMovie = () => {
           </Tab>
         ))}
       </div>
-      <div>{active === "Popular Movies" ? categories[0] : categories[1]}</div>
+      <div>{active === "Top Rated Movies" ? categories[0] : categories[1]}</div>
     </>
   );
 };

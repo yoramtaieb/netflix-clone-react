@@ -42,4 +42,14 @@ export const GlobalStyles = createGlobalStyle`
         }
       }
     }
+    .genres {
+      .movie_by_genre {
+        .movie 
+          .container_title {
+            background: ${({ theme }) => theme.text};
+            color: ${({ theme }) => theme.body};
+          }
+        }
+      }
+    }
 `;
