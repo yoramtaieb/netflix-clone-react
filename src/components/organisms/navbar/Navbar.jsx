@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
-import Toggle from "../../darkmode/Toggle";
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "../../darkmode/globalStyles";
-import { lightTheme, darkTheme } from "../../darkmode/Theme";
-import { useDarkMode } from "../../darkmode/useDarkMode";
+
+import Toggle from "../../atoms/dark-mode/Toggle";
+import { GlobalStyles } from "../../atoms/dark-mode/globalStyles";
+import { lightTheme, darkTheme } from "../../atoms/dark-mode/Theme";
+import { useDarkMode } from "../../atoms/dark-mode/useDarkMode";
 
 import "./Navbar.scss";
 
-function Navbar() {
+const Navbar = () => {
   const [open, setOpen] = useState(true);
   const [heightNav, setHeightNav] = useState("0%");
   const [theme, themeToggler] = useDarkMode();
@@ -110,6 +110,6 @@ function Navbar() {
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

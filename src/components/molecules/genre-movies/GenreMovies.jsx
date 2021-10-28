@@ -3,7 +3,7 @@ import { fetchGenre } from "../../../service";
 
 import "./GenreMovies.scss";
 
-function GenreMovies() {
+const GenreMovies = () => {
   const [genre, setGenre] = useState([]);
 
   useEffect(() => {
@@ -32,6 +32,6 @@ function GenreMovies() {
       </div>
     </>
   );
-}
+};
 
 export default GenreMovies;

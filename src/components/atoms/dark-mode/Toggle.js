@@ -2,8 +2,8 @@ import React from "react";
 import { func, string } from "prop-types";
 import styled from "styled-components";
 
-import Sun from "../../assets/svgr/Sun.jsx";
-import Togglemoon from "../../assets/svgr/Moon.jsx";
+import Sun from "../../../assets/svgr/Sun.jsx";
+import Togglemoon from "../../../assets/svgr/Moon.jsx";
 
 const Button = styled.button`
    {

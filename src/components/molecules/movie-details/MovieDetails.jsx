@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchMovieDetail } from "../../../service";
 
-export function MovieDetails({ match }) {
+const MovieDetails = ({ match }) => {
   let params = match.params;
   const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [detail, setDetail] = useState([]);
@@ -29,6 +29,6 @@ export function MovieDetails({ match }) {
       </div>
     </>
   );
-}
+};
 
 export default MovieDetails;

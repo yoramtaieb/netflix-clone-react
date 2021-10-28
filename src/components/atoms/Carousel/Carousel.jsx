@@ -5,7 +5,7 @@ import settings from "./settings";
 
 import "./Carousel.scss";
 
-function Carousel() {
+const Carousel = () => {
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
@@ -42,6 +42,6 @@ function Carousel() {
       </div>
     </>
   );
-}
+};
 
 export default Carousel;

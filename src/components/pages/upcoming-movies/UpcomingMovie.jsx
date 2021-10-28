@@ -1,9 +1,9 @@
 import React from "react";
-import UpcomingMovies from "../../moleculs/categoriesMovies/upcomingMovies/UpcomingMovies";
+import UpcomingMovies from "../../molecules/categories-movies/UpcomingMovies";
 
 import "./UpcomingMovie.scss";
 
-function UpcomingMovie() {
+const UpcomingMovie = () => {
   return (
     <>
       <div className="upcoming_movies">
@@ -11,6 +11,6 @@ function UpcomingMovie() {
       </div>
     </>
   );
-}
+};
 
 export default UpcomingMovie;

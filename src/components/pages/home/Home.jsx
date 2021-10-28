@@ -1,10 +1,10 @@
 import React from "react";
 import Carousel from "../../atoms/carousel/Carousel";
-import GenreMovies from "../../moleculs/genreMovies/GenreMovies";
+import GenreMovies from "../../molecules/genre-movies/GenreMovies";
 
 import "./Home.scss";
 
-function Home() {
+const Home = () => {
   return (
     <>
       <div className="home">
@@ -13,6 +13,6 @@ function Home() {
       </div>
     </>
   );
-}
+};
 
 export default Home;

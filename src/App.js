@@ -8,14 +8,14 @@ import {
 
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/home/Home";
-import MovieDetails from "./components/moleculs/movieDetails/MovieDetails";
+import MovieDetails from "./components/molecules/movie-details/MovieDetails";
 import UpcomingMovie from "./components/pages/upcoming-movies/UpcomingMovie";
 import Movies from "./components/pages/movies/Movies";
 
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./components/darkmode/globalStyles";
-import { lightTheme, darkTheme } from "./components/darkmode/Theme";
-import { useDarkMode } from "./components/darkmode/useDarkMode";
+import { GlobalStyles } from "./components/atoms/dark-mode/globalStyles";
+import { lightTheme, darkTheme } from "./components/atoms/dark-mode/Theme";
+import { useDarkMode } from "./components/atoms/dark-mode/useDarkMode";
 
 import "./App.scss";
 

@@ -3,7 +3,7 @@ import TabsMovie from "../../atoms/tabs-movie/TabsMovie";
 
 import "./Movies.scss";
 
-function Movies() {
+const Movies = () => {
   return (
     <>
       <div className="movies">
@@ -11,6 +11,6 @@ function Movies() {
       </div>
     </>
   );
-}
+};
 
 export default Movies;

@@ -3,7 +3,7 @@ import Navbar from "../organisms/navbar/Navbar";
 
 import "./Layout.scss";
 
-function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <>
       <div className="layout">
@@ -12,6 +12,6 @@ function Layout({ children }) {
       </div>
     </>
   );
-}
+};
 
 export default Layout;
