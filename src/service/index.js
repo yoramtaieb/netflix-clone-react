@@ -1,139 +1,44 @@
-import axios from "axios";
-
+const apiUrl = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
-const url = process.env.REACT_APP_API_URL;
-const posterUrl = process.env.REACT_APP_POSTER_URL;
-const popularUrl = `${url}/movie/popular`;
-const topratedUrl = `${url}/movie/top_rated`;
-const upcomingUrl = `${url}/movie/upcoming`;
-const genreUrl = `${url}/genre/movie/list`;
-const movieUrl = `${url}/movie`;
-const moviesUrl = `${url}/discover/movie`;
 
-export const fetchMoviesPopular = async () => {
-  try {
-    const { data } = await axios.get(popularUrl, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-        page: 1,
-      },
-    });
+export async function fetchPopularMovies() {
+  const url = `${apiUrl}movie/popular${apiKey}`;
+  let result = await fetch(url);
+  let popular = await result.json();
+  return popular;
+}
 
-    const modifiedData = data["results"].map((m) => ({
-      id: m["id"],
-      backPoster: posterUrl + m["backdrop_path"],
-      popularity: m["popularity"],
-      title: m["title"],
-      poster: posterUrl + m["poster_path"],
-      overview: m["overview"],
-      rating: m["vote_average"],
-      release_date: m["release_date"],
-    }));
+export async function fetchTopratedMovies() {
+  const url = `${apiUrl}movie/top_rated${apiKey}`;
+  let result = await fetch(url);
+  let topRated = await result.json();
+  return topRated;
+}
 
-    return modifiedData;
-  } catch (error) {}
-};
+export async function fetchUpcomingMovies() {
+  const url = `${apiUrl}movie/upcoming${apiKey}`;
+  let result = await fetch(url);
+  let upcoming = await result.json();
+  return upcoming;
+}
 
-export const fetchTopratedMovie = async () => {
-  try {
-    const { data } = await axios.get(topratedUrl, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-        page: 1,
-      },
-    });
+export async function fetchDetailsMovie(id) {
+  const url = `${apiUrl}movie/${id}${apiKey}`;
+  let result = await fetch(url);
+  let movieByGenre = await result.json();
+  return movieByGenre;
+}
 
-    const modifiedData = data["results"].map((m) => ({
-      id: m["id"],
-      backPoster: posterUrl + m["backdrop_path"],
-      popularity: m["popularith"],
-      title: m["title"],
-      poster: posterUrl + m["poster_path"],
-      overview: m["overview"],
-      rating: m["vote_average"],
-    }));
+export async function fetchGenres() {
+  const url = `${apiUrl}genre/movie/list${apiKey}`;
+  let result = await fetch(url);
+  let genres = await result.json();
+  return genres;
+}
 
-    return modifiedData;
-  } catch (error) {}
-};
-
-export const fetchUpcomingMovie = async () => {
-  try {
-    const { data } = await axios.get(upcomingUrl, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-        page: 1,
-      },
-    });
-
-    const modifiedData = data["results"].map((m) => ({
-      id: m["id"],
-      backPoster: posterUrl + m["backdrop_path"],
-      popularity: m["popularith"],
-      title: m["title"],
-      poster: posterUrl + m["poster_path"],
-      overview: m["overview"],
-      rating: m["vote_average"],
-    }));
-
-    return modifiedData;
-  } catch (error) {}
-};
-
-export const fetchGenre = async () => {
-  try {
-    const { data } = await axios.get(genreUrl, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-        page: 1,
-      },
-    });
-
-    const modifiedData = data["genres"].map((g) => ({
-      id: g["id"],
-      name: g["name"],
-    }));
-    return modifiedData;
-  } catch (error) {}
-};
-
-export const fetchMovieByGenre = async (genre_id) => {
-  try {
-    const { data } = await axios.get(moviesUrl, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-        page: 1,
-        with_genres: genre_id,
-      },
-    });
-    const posterUrl = "https://image.tmdb.org/t/p/original/";
-    const modifiedData = data["results"].map((m) => ({
-      id: m["id"],
-      backPoster: posterUrl + m["backdrop_path"],
-      popularity: m["popularith"],
-      title: m["title"],
-      poster: posterUrl + m["poster_path"],
-      overview: m["overview"],
-      rating: m["vote_average"],
-    }));
-
-    return modifiedData;
-  } catch (error) {}
-};
-
-export const fetchMovieDetail = async (id) => {
-  try {
-    const { data } = await axios.get(`${movieUrl}/${id}`, {
-      params: {
-        api_key: apiKey,
-        language: "en_US",
-      },
-    });
-    return data;
-  } catch (error) {}
-};
+export async function fetchMovieByGenre(genre_id) {
+  const url = `${apiUrl}discover/movie${apiKey}&with_genres=${genre_id}`;
+  let result = await fetch(url);
+  let movieByGenre = await result.json();
+  return movieByGenre;
+}

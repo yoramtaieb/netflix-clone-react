@@ -1,5 +1,4 @@
 import React from "react";
-
 import Carousel from "../../atoms/carousel/Carousel";
 import GenreMovies from "../../molecules/genre-movies/GenreMovies";
 

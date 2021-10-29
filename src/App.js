@@ -8,9 +8,9 @@ import {
 
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/home/Home";
-import MovieDetails from "./components/molecules/movie-details/MovieDetails";
-import UpcomingMovie from "./components/pages/upcoming-movies/UpcomingMovie";
 import Movies from "./components/pages/movies/Movies";
+import UpcomingMovie from "./components/pages/upcoming-movies/UpcomingMovie";
+import MovieDetails from "./components/molecules/movie-details/MovieDetails";
 
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/atoms/dark-mode/globalStyles";

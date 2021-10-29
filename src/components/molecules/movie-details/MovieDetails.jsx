@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { fetchMovieDetail } from "../../../service";
+import { fetchDetailsMovie } from "../../../service";
 
 const MovieDetails = ({ match }) => {
   let params = match.params;
   const posterUrl = process.env.REACT_APP_POSTER_URL;
-  const [detail, setDetail] = useState([]);
+  const [details, setDetails] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setDetail(await fetchMovieDetail(params.id));
+      setDetails(await fetchDetailsMovie(params.id));
     };
 
     fetchAPI();
@@ -18,14 +18,14 @@ const MovieDetails = ({ match }) => {
     <>
       <div>
         <img
-          src={posterUrl + detail.backdrop_path}
+          src={posterUrl + details.backdrop_path}
           alt=""
           style={{ height: "150px" }}
         />
-        <h3>{detail.id}</h3>
-        <h3>{detail.title}</h3>
-        <h3>{detail.release_date}</h3>
-        <h3>{detail.overview}</h3>
+        <h3>{details.id}</h3>
+        <h3>{details.title}</h3>
+        <h3>{details.release_date}</h3>
+        <h3>{details.overview}</h3>
       </div>
     </>
   );

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchMoviesPopular } from "../../../service/index";
+import { fetchPopularMovies } from "../../../service/index";
 
 const PopularMovies = () => {
+  const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setPopular(await fetchMoviesPopular());
+      setPopular(await fetchPopularMovies());
     };
 
     fetchAPI();
@@ -20,14 +21,16 @@ const PopularMovies = () => {
           <h3>Popular Movies :</h3>
         </div>
         <div className="all_infos">
-          {popular
-            ? popular.map((movie, index) => {
+          {popular.results
+            ? popular.results.map((movie, index) => {
                 return (
                   <div key={index}>
                     <Link to={`/movie/${movie.id}`}>
                       <div
                         style={{
-                          backgroundImage: `url(${movie.poster})`,
+                          backgroundImage: `url(${
+                            posterUrl + movie.poster_path
+                          })`,
                         }}
                         className="container_img"
                       ></div>

@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchUpcomingMovie } from "../../../service/index";
+import { fetchUpcomingMovies } from "../../../service/index";
 
 const UpcomingMovies = () => {
+  const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [upcoming, setUpcoming] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setUpcoming(await fetchUpcomingMovie());
+      setUpcoming(await fetchUpcomingMovies());
     };
 
     fetchAPI();
@@ -20,14 +21,16 @@ const UpcomingMovies = () => {
           <h3>Upcoming Movies :</h3>
         </div>
         <div className="all_infos">
-          {upcoming
-            ? upcoming.map((movie, index) => {
+          {upcoming.results
+            ? upcoming.results.map((movie, index) => {
                 return (
                   <div key={index}>
                     <Link to={`/movie/${movie.id}`}>
                       <div
                         style={{
-                          backgroundImage: `url(${movie.poster})`,
+                          backgroundImage: `url(${
+                            posterUrl + movie.poster_path
+                          })`,
                         }}
                         className="container_img"
                       ></div>
