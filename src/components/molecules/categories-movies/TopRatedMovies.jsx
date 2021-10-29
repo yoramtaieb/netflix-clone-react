@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchTopratedMovies } from "../../../service/index";
+import { fetchTopRatedMovies } from "../../../service/index";
 
 const TopRatedMovies = () => {
   const posterUrl = process.env.REACT_APP_POSTER_URL;
@@ -8,7 +8,7 @@ const TopRatedMovies = () => {
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setTopRated(await fetchTopratedMovies());
+      setTopRated(await fetchTopRatedMovies());
     };
 
     fetchAPI();
@@ -38,7 +38,7 @@ const TopRatedMovies = () => {
                         <h3 className="movie_title">{movie.title}</h3>
                         <h3 className="movie_rated">
                           <span>Rated : </span>
-                          {movie.rating}
+                          {movie.vote_average}
                           <span className="note">/10</span>
                         </h3>
                       </div>

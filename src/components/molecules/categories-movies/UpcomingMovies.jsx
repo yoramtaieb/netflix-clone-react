@@ -38,7 +38,7 @@ const UpcomingMovies = () => {
                         <h3 className="movie_title">{movie.title}</h3>
                         <h3 className="movie_rated">
                           <span>Rated : </span>
-                          {movie.rating}
+                          {movie.vote_average}
                           <span className="note">/10</span>
                         </h3>
                       </div>

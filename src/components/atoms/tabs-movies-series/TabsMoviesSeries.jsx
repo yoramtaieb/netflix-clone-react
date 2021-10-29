@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import PopularMovies from "../../molecules/categories-movies/PopularMovies";
 import TopRatedMovies from "../../molecules/categories-movies/TopRatedMovies";
+import PopularSeries from "../../molecules/categories-series/PopularSeries";
+import TopRatedSeries from "../../molecules/categories-series/TopRatedSeries";
 
-import "./TabsMovie.scss";
+import "./TabsMoviesSeries.scss";
 
 const Tab = styled.button`
   cursor: pointer;
@@ -12,8 +14,9 @@ const Tab = styled.button`
   font-size: 0.8rem;
   border: 1px solid black;
   border-radius: 20px;
-  margin-right: 10px;
-  padding: 5px 20px;
+  margin: 0 10px 10px 0;
+  padding: 5px 0;
+  width: 150px;
   ${({ active }) =>
     active &&
     `
@@ -21,10 +24,14 @@ const Tab = styled.button`
   `}
 `;
 
-const TabsMovie = () => {
-  const categorieTitles = ["Popular Movies", "Top Rated Movies"];
+const TabMoviesSeries = () => {
+  const categorieTitles = [
+    "Popular Movies",
+    "Top Rated Movies",
+    "Popular Series",
+    "Top Rated Series",
+  ];
   const [active, setActive] = useState(categorieTitles);
-  const categories = [<TopRatedMovies />, <PopularMovies />];
 
   return (
     <>
@@ -39,9 +46,21 @@ const TabsMovie = () => {
           </Tab>
         ))}
       </div>
-      <div>{active === "Top Rated Movies" ? categories[0] : categories[1]}</div>
+      <div>
+        {active === "Popular Movies" ? (
+          <PopularMovies />
+        ) : active === "Top Rated Movies" ? (
+          <TopRatedMovies />
+        ) : active === "Popular Series" ? (
+          <PopularSeries />
+        ) : active === "Top Rated Series" ? (
+          <TopRatedSeries />
+        ) : (
+          <PopularMovies />
+        )}
+      </div>
     </>
   );
 };
 
-export default TabsMovie;
+export default TabMoviesSeries;

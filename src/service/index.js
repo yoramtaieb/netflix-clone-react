@@ -1,6 +1,7 @@
 const apiUrl = process.env.REACT_APP_API_URL;
 const apiKey = process.env.REACT_APP_API_KEY;
 
+// Methods for movies
 export async function fetchPopularMovies() {
   const url = `${apiUrl}movie/popular${apiKey}`;
   let result = await fetch(url);
@@ -8,7 +9,7 @@ export async function fetchPopularMovies() {
   return popular;
 }
 
-export async function fetchTopratedMovies() {
+export async function fetchTopRatedMovies() {
   const url = `${apiUrl}movie/top_rated${apiKey}`;
   let result = await fetch(url);
   let topRated = await result.json();
@@ -25,8 +26,8 @@ export async function fetchUpcomingMovies() {
 export async function fetchDetailsMovie(id) {
   const url = `${apiUrl}movie/${id}${apiKey}`;
   let result = await fetch(url);
-  let movieByGenre = await result.json();
-  return movieByGenre;
+  let detailsMovie = await result.json();
+  return detailsMovie;
 }
 
 export async function fetchGenres() {
@@ -41,4 +42,26 @@ export async function fetchMovieByGenre(genre_id) {
   let result = await fetch(url);
   let movieByGenre = await result.json();
   return movieByGenre;
+}
+
+// Methods for series
+export async function fetchPopularSeries() {
+  const url = `${apiUrl}tv/popular${apiKey}`;
+  let result = await fetch(url);
+  let popular = await result.json();
+  return popular;
+}
+
+export async function fetchTopRatedSeries() {
+  const url = `${apiUrl}tv/top_rated${apiKey}`;
+  let result = await fetch(url);
+  let topRated = await result.json();
+  return topRated;
+}
+
+export async function fetchDetailsSeries(id) {
+  const url = `${apiUrl}tv/${id}${apiKey}`;
+  let result = await fetch(url);
+  let detailsSerie = await result.json();
+  return detailsSerie;
 }

@@ -1,7 +1,7 @@
 @import "../../../sass/mixins.scss";
 
 .tabs {
-  margin: 50px 20px;
+  margin: 30px 20px 20px 20px;
   @include media(laptop) {
     margin: 30px 50px 0 50px;
   }

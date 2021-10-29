@@ -58,7 +58,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               exact
-              to="/movies"
+              to="/movies-series"
               onClick={() => {
                 setOpen(true);
                 toggleNav();
@@ -89,8 +89,8 @@ const Navbar = () => {
           <NavLink exact to="/" className="link">
             <h3>• Home</h3>
           </NavLink>
-          <NavLink exact to="/movies" className="link">
-            <h3>• Movies</h3>
+          <NavLink exact to="/movies-series" className="link">
+            <h3>• Movies - Series</h3>
           </NavLink>
           <NavLink exact to="/upcoming-movies" className="link">
             <h3>• Upcoming...</h3>

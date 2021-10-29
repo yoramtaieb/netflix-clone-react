@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchPopularMovies } from "../../../service/index";
+import { fetchPopularSeries } from "../../../service/index";
 
-const PopularMovies = () => {
+const PopularSeries = () => {
   const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [popular, setPopular] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setPopular(await fetchPopularMovies());
+      setPopular(await fetchPopularSeries());
     };
 
     fetchAPI();
@@ -18,27 +18,27 @@ const PopularMovies = () => {
     <>
       <div className="categories_movies">
         <div className="title">
-          <h3>Popular Movies :</h3>
+          <h3>Popular Series :</h3>
         </div>
         <div className="all_infos">
           {popular.results
-            ? popular.results.map((movie, index) => {
+            ? popular.results.map((serie, index) => {
                 return (
                   <div key={index}>
-                    <Link to={`/movie/${movie.id}`}>
+                    <Link to={`/serie/${serie.id}`}>
                       <div
                         style={{
                           backgroundImage: `url(${
-                            posterUrl + movie.poster_path
+                            posterUrl + serie.poster_path
                           })`,
                         }}
                         className="container_img"
                       ></div>
                       <div className="container_title">
-                        <h3 className="movie_title">{movie.title}</h3>
+                        <h3 className="movie_title">{serie.name}</h3>
                         <h3 className="movie_rated">
                           <span>Rated : </span>
-                          {movie.vote_average}
+                          {serie.vote_average}
                           <span className="note">/10</span>
                         </h3>
                       </div>
@@ -53,4 +53,4 @@ const PopularMovies = () => {
   );
 };
 
-export default PopularMovies;
+export default PopularSeries;

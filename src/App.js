@@ -8,9 +8,10 @@ import {
 
 import Layout from "./components/layout/Layout";
 import Home from "./components/pages/home/Home";
-import Movies from "./components/pages/movies/Movies";
+import MoviesSeries from "./components/pages/movies-series/MoviesSeries";
 import UpcomingMovie from "./components/pages/upcoming-movies/UpcomingMovie";
 import MovieDetails from "./components/molecules/movie-details/MovieDetails";
+import SerieDetails from "./components/molecules/serie-details/SeriesDetails";
 
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/atoms/dark-mode/globalStyles";
@@ -31,9 +32,10 @@ function App() {
           <Layout>
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/movies" component={Movies} />
+              <Route exact path="/movies-series" component={MoviesSeries} />
               <Route exact path="/upcoming-movies" component={UpcomingMovie} />
               <Route exact path="/movie/:id" component={MovieDetails} />
+              <Route exact path="/serie/:id" component={SerieDetails} />
               <Redirect from="*" to="/" />
             </Switch>
           </Layout>
