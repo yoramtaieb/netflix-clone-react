@@ -17,8 +17,8 @@ J'ai décidé de faire un clone de NETFLIX en me servant de l'API DBMOVIE dispon
 
 ### LIGHT-MODE 🌕
 
-![LightModeNetflix!](https://github.com/yoramtaieb/netflix-clone-react/blob/master/src/img-readme/dark_mode.png)
+![LightModeNetflix!](https://github.com/yoramtaieb/netflix-clone-react/blob/master/src/img-readme/light_mode.png)
 
 ### DARK-MODE 🌕
 
-![LightModeNetflix!](https://github.com/yoramtaieb/netflix-clone-react/blob/master/src/img-readme/light_mode.png)
+![LightModeNetflix!](https://github.com/yoramtaieb/netflix-clone-react/blob/master/src/img-readme/dark_mode.png)
