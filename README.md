@@ -3,7 +3,7 @@
 ## REACT APPLICATION W/ DB MOVIE API && FETCH METHOD
 
 J'ai décidé de faire un clone de NETFLIX en me servant de l'API DBMOVIE disponible en open-source :
-[a link](https://developers.themoviedb.org/3/getting-started/introduction)
+[API](https://developers.themoviedb.org/3/getting-started/introduction)
 
 ## Installation
 
