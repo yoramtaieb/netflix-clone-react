@@ -1,0 +1,41 @@
+@import "../../../../sass/mixins.scss";
+
+.details {
+  margin: 30px 20px;
+  @include media(laptop) {
+    margin-left: 100px;
+  }
+  .container_images {
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    @include media(tablet) {
+      height: 400px;
+    }
+  }
+  .informations {
+    .info {
+      margin: 4px 0;
+      display: flex;
+      justify-content: flex-start;
+      font-size: 0.7rem;
+      @include media(tablet) {
+        font-size: 0.8rem;
+      }
+      h3 {
+        font-family: "Poppins-regular";
+      }
+      span {
+        font-family: "Poppins-bold";
+        margin-left: 4px;
+      }
+      #link {
+        text-decoration: underline;
+      }
+    }
+  }
+}

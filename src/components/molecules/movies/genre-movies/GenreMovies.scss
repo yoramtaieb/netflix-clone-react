@@ -1,4 +1,4 @@
-@import "../../../sass/mixins.scss";
+@import "../../../../sass/mixins.scss";
 
 .genres {
   margin: 30px 20px;
@@ -26,13 +26,13 @@
       background-color: #a51a1a;
       padding: 5px 0px;
       text-align: center;
-      width: 100px;
+      width: 140px;
       border-radius: 20px;
       cursor: pointer;
       margin-top: 20px;
       margin-right: 10px;
       @include media(laptop) {
-        width: 130px;
+        width: 170px;
         margin-right: 20px;
       }
       h3 {

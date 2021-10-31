@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchUpcomingMovies } from "../../../service/index";
+import { fetchPopularMovies } from "../../../../service/index";
 
-const UpcomingMovies = () => {
+const PopularMovies = () => {
   const posterUrl = process.env.REACT_APP_POSTER_URL;
-  const [upcoming, setUpcoming] = useState([]);
+  const [popular, setPopular] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setUpcoming(await fetchUpcomingMovies());
+      setPopular(await fetchPopularMovies());
     };
 
     fetchAPI();
@@ -18,11 +18,11 @@ const UpcomingMovies = () => {
     <>
       <div className="categories_movies">
         <div className="title">
-          <h3>Upcoming Movies :</h3>
+          <h3>Popular Movies :</h3>
         </div>
         <div className="all_infos">
-          {upcoming.results
-            ? upcoming.results.map((movie, index) => {
+          {popular.results
+            ? popular.results.map((movie, index) => {
                 return (
                   <div key={index}>
                     <Link to={`/movie/${movie.id}`}>
@@ -53,4 +53,4 @@ const UpcomingMovies = () => {
   );
 };
 
-export default UpcomingMovies;
+export default PopularMovies;

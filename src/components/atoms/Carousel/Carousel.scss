@@ -1,9 +1,9 @@
 @import "../../../sass/mixins.scss";
 
 .slider {
-  margin: 50px 20px;
+  margin: 50px 20px 60px 20px;
   @include media(laptop) {
-    margin: 30px 50px 0 50px;
+    margin: 30px 50px 60px 50px;
   }
   .slick-next,
   .slick-prev {

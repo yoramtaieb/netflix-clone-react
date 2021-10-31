@@ -30,14 +30,14 @@ export async function fetchDetailsMovie(id) {
   return detailsMovie;
 }
 
-export async function fetchGenres() {
+export async function fetchGenresMovie() {
   const url = `${apiUrl}genre/movie/list${apiKey}`;
   let result = await fetch(url);
   let genres = await result.json();
   return genres;
 }
 
-export async function fetchMovieByGenre(genre_id) {
+export async function fetchMoviesByGenre(genre_id) {
   const url = `${apiUrl}discover/movie${apiKey}&with_genres=${genre_id}`;
   let result = await fetch(url);
   let movieByGenre = await result.json();
@@ -64,4 +64,18 @@ export async function fetchDetailsSeries(id) {
   let result = await fetch(url);
   let detailsSerie = await result.json();
   return detailsSerie;
+}
+
+export async function fetchGenresSerie() {
+  const url = `${apiUrl}genre/tv/list${apiKey}`;
+  let result = await fetch(url);
+  let genres = await result.json();
+  return genres;
+}
+
+export async function fetchSeriesByGenre(genre_id) {
+  const url = `${apiUrl}discover/tv${apiKey}&with_genres=${genre_id}`;
+  let result = await fetch(url);
+  let serieByGenre = await result.json();
+  return serieByGenre;
 }

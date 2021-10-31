@@ -10,8 +10,8 @@ import Layout from "./components/layout/Layout";
 import Home from "./components/pages/home/Home";
 import MoviesSeries from "./components/pages/movies-series/MoviesSeries";
 import UpcomingMovie from "./components/pages/upcoming-movies/UpcomingMovie";
-import MovieDetails from "./components/molecules/movie-details/MovieDetails";
-import SerieDetails from "./components/molecules/serie-details/SeriesDetails";
+import MovieDetails from "./components/molecules/movies/movie-details/MovieDetails";
+import SerieDetails from "./components/molecules/series/serie-details/SeriesDetails";
 
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/atoms/dark-mode/globalStyles";

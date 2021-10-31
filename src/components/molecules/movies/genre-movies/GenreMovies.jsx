@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchGenres, fetchMovieByGenre } from "../../../service";
+import { fetchGenresMovie, fetchMoviesByGenre } from "../../../../service";
 import { Link } from "react-router-dom";
 
 import "./GenreMovies.scss";
@@ -7,28 +7,30 @@ import "./GenreMovies.scss";
 const GenreMovies = () => {
   const posterUrl = process.env.REACT_APP_POSTER_URL;
   const [genres, setGenres] = useState([]);
-  const [movieByGenre, setMovieByGenre] = useState([]);
+  const [moviesByGenre, setMoviesByGenre] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setGenres(await fetchGenres());
-      setMovieByGenre(await fetchMovieByGenre(28));
+      setGenres(await fetchGenresMovie());
+      setMoviesByGenre(await fetchMoviesByGenre(28));
     };
 
     fetchAPI();
   }, []);
 
   const handleGenreClick = async (genre_id) => {
-    setMovieByGenre(await fetchMovieByGenre(genre_id));
+    setMoviesByGenre(await fetchMoviesByGenre(genre_id));
   };
 
   return (
     <>
       <div className="genres">
-        <h1 className="title">All the categories :</h1>
+        <div className="title">
+          <h3>Genres Movie :</h3>
+        </div>
         <div className="all_infos">
           {genres.genres
-            ? genres.genres.map((genre, index) => {
+            ? genres.genres.slice(0, 10).map((genre, index) => {
                 return (
                   <div key={index} className="infos">
                     <h3
@@ -44,8 +46,8 @@ const GenreMovies = () => {
             : null}
         </div>
         <div className="movie_by_genre">
-          {movieByGenre.results
-            ? movieByGenre.results.slice(0, 8).map((movieByGenre, index) => {
+          {moviesByGenre.results
+            ? moviesByGenre.results.slice(0, 8).map((movieByGenre, index) => {
                 return (
                   <div key={index} className="movie">
                     <Link to={`/movie/${movieByGenre.id}`}>

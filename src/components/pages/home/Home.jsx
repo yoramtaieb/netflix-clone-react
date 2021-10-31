@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "../../atoms/carousel/Carousel";
-import GenreMovies from "../../molecules/genre-movies/GenreMovies";
+import TabsGenres from "../../atoms/tabs-genres/TabsGenres";
 
 import "./Home.scss";
 
@@ -9,7 +9,7 @@ const Home = () => {
     <>
       <div className="home">
         <Carousel />
-        <GenreMovies />
+        <TabsGenres />
       </div>
     </>
   );

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { fetchPopularSeries } from "../../../service/index";
+import { fetchTopRatedSeries } from "../../../../service/index";
 
-const PopularSeries = () => {
+const TopRatedSeries = () => {
   const posterUrl = process.env.REACT_APP_POSTER_URL;
-  const [popular, setPopular] = useState([]);
+  const [topRated, setTopRated] = useState([]);
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setPopular(await fetchPopularSeries());
+      setTopRated(await fetchTopRatedSeries());
     };
 
     fetchAPI();
@@ -18,11 +18,11 @@ const PopularSeries = () => {
     <>
       <div className="categories_movies">
         <div className="title">
-          <h3>Popular Series :</h3>
+          <h3>Top Rated Series :</h3>
         </div>
         <div className="all_infos">
-          {popular.results
-            ? popular.results.map((serie, index) => {
+          {topRated.results
+            ? topRated.results.map((serie, index) => {
                 return (
                   <div key={index}>
                     <Link to={`/serie/${serie.id}`}>
@@ -53,4 +53,4 @@ const PopularSeries = () => {
   );
 };
 
-export default PopularSeries;
+export default TopRatedSeries;

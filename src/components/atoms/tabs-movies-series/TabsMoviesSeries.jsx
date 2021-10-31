@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import PopularMovies from "../../molecules/categories-movies/PopularMovies";
-import TopRatedMovies from "../../molecules/categories-movies/TopRatedMovies";
-import PopularSeries from "../../molecules/categories-series/PopularSeries";
-import TopRatedSeries from "../../molecules/categories-series/TopRatedSeries";
+import PopularMovies from "../../molecules/movies/categories-movies/PopularMovies";
+import TopRatedMovies from "../../molecules/movies/categories-movies/TopRatedMovies";
+import PopularSeries from "../../molecules/series/categories-series/PopularSeries";
+import TopRatedSeries from "../../molecules/series/categories-series/TopRatedSeries";
 
 import "./TabsMoviesSeries.scss";
 

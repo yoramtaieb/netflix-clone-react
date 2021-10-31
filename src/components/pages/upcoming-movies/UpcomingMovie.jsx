@@ -1,5 +1,5 @@
 import React from "react";
-import UpcomingMovies from "../../molecules/categories-movies/UpcomingMovies";
+import UpcomingMovies from "../../molecules/movies/categories-movies/UpcomingMovies";
 
 import "./UpcomingMovie.scss";
 
